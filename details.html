@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- roboto -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lexend Deca -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-icon-cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Courses-Uni</title>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- Page Transition Overlay -->
+    <div
+      id="page-transition-overlay"
+      style="
+        position: fixed;
+        inset: 0;
+        background-color: white;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s;
+        pointer-events: none;
+      "
+    >
+      <i
+        class="fa-solid fa-graduation-cap animate-bounce"
+        style="color: #ff5c2a; font-size: 4.5rem"
+      ></i>
+    </div>
+    <!-- Navbar start -->
+    <header class="w-full bg-white sticky top-0 z-50 shadow-sm">
+      <div class="max-w-[1350px] mx-auto px-4">
+        <nav
+          class="flex items-center justify-between py-5"
+          style="font-family: &quot;Lexend Deca&quot;, sans-serif"
+        >
+          <div class="flex items-center">
+            <a href="details.html" class="block max-w-98">
+              <img
+                src="assets/images/logo.png"
+                alt="Uni Logo"
+                class="w-auto"
+              />
+            </a>
+          </div>
+
+          <div class="hidden lg:flex items-center">
+            <a
+              href="index.html"
+              class="text-black mr-[24px] font-medium text-[16px] hover:text-[#FF5C2A] transition-colors duration-300 ease-in-out"
+              >HOME</a
+            >
+            <a
+              href="about.html"
+              class="text-black mr-[24px] font-medium text-[16px]"
+              >ABOUT US</a
+            >
+            <a
+              href="courses.html"
+              class="text-[#FF5C2A] font-medium mr-[24px] text-[16px] hover:text-[#FF5C2A] transition-colors duration-300 ease-in-out"
+              >COURSES</a
+            >
+            <a
+              href="intructors.html"
+              class="text-black font-medium mr-[24px] text-[16px] hover:text-[#FF5C2A] transition-colors duration-300 ease-in-out"
+              >INSTRUCTORS</a
+            >
+            <a
+              href="contact.html"
+              class="text-black font-medium mr-[24px] text-[16px] hover:text-[#FF5C2A] transition-colors duration-300 ease-in-out"
+              >CONTACT US</a
+            >
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <a
+              href="#"
+              class="bg-[#FF5C2A] text-white px-[24px] py-[12px] rounded-[5px] font-medium text-[16px] hover:bg-black transition-all duration-500 ease-in-out active:scale-95 inline-block"
+            >
+              Get in Touch
+            </a>
+            <a
+              id="mobile-menu-btn"
+              class="lg:hidden text-2xl text-black focus:outline-none px-2"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </a>
+          </div>
+        </nav>
+
+        <div
+          id="mobile-menu-overlay"
+          class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"
+        ></div>
+
+        <div
+          id="mobile-menu"
+          class="fixed top-0 left-0 h-full w-[280px] bg-white z-[70] transform -translate-x-full transition-transform duration-300 shadow-2xl flex flex-col"
+        >
+          <div
+            class="flex justify-between items-center p-5 border-b border-gray-100"
+          >
+            <img
+              src="assets/images/logo.png"
+              alt="Uni Logo"
+              class="h-8 w-auto"
+            />
+            <a
+              id="close-menu-btn"
+              class="text-2xl text-gray-600 focus:outline-none hover:text-[#FF5C2A]"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </a>
+          </div>
+          <div class="flex flex-col px-5 py-6">
+            <a
+              href="index.html"
+              class="block text-black mb-[38px] font-medium text-[16px] hover:text-[#FF5C2A] transition-colors"
+              >HOME</a
+            >
+            <a
+              href="about.html"
+              class="block text-black mb-[38px] font-medium text-[16px]"
+              >ABOUT US</a
+            >
+            <a
+              href="courses.html"
+              class="block text-[#FF5C2A] mb-[38px] font-medium text-[16px] hover:text-[#FF5C2A] transition-colors"
+              >COURSES</a
+            >
+            <a
+              href="intructors.html"
+              class="block text-black font-medium mb-[38px] text-[16px] hover:text-[#FF5C2A] transition-colors"
+              >INSTRUCTORS</a
+            >
+            <a
+              href="contact.html"
+              class="block text-black font-medium mb-[38px] text-[16px] hover:text-[#FF5C2A] transition-colors"
+              >CONTACT US</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Navbar end -->
+    <main class="overflow-hidden">
+      <section
+        class="bg-[#FBF9F5] py-20 px-6"
+        style="font-family: &quot;Lexend Deca&quot;, sans-serif"
+      >
+        <div class="max-w-[1350px] mx-auto">
+          <div class="text-start">
+            <!-- Title -->
+            <h2
+              class="text-[35px] md:text-[45px] lg:text-[57px] font-semibold max-w-[900px] mb-[20px] leading-[1.1]"
+              data-aos="fade-up"
+            >
+              Web Design & UI/UX Design with Graphics
+            </h2>
+
+            <!-- Description -->
+            <p
+              class="text-[16px] md:text-[20px] text-[#8F8D82] font-normal leading-relaxed mb-10 max-w-[1040px]"
+              data-aos="fade-up" data-aos-delay="100"
+            >
+              Learn the essentials and advanced concepts of web design and UI/UX
+              design with AI through a dedicated course at the Uni. Become a
+              professional UI/UX designer expert capable of designing
+              high-impact websites and user experiences for businesses and
+              building a promising career.
+            </p>
+
+            <!-- Stats Row (Reviews & Students) -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center mb-10 gap-4 sm:gap-0" data-aos="fade-up" data-aos-delay="200">
+              <!-- Reviews -->
+              <ul class="flex items-center list-none sm:mr-10">
+                <li class="flex items-center">
+                  <i
+                    class="fa-regular fa-star text-[#E6A83E] text-[16px] mr-2"
+                  ></i>
+                  <p class="font-normal text-[14px] text-gray-900">
+                    5.0 (350 Reviews)
+                  </p>
+                </li>
+              </ul>
+
+              <!-- Enrolled Students Avatar Stack -->
+              <div class="flex items-center">
+                <div class="flex items-center -space-x-2 mr-4 sm:mr-9">
+                  <img
+                    src="assets/images/Ellipse 5.png"
+                    alt="Student"
+                    class="w-9 h-9 rounded-full object-cover"
+                  />
+                  <img
+                    src="assets/images/Ellipse 6.png"
+                    alt="Student"
+                    class="w-9 h-9 rounded-full object-cover"
+                  />
+                  <img
+                    src="assets/images/Ellipse7.png"
+                    alt="Student"
+                    class="w-9 h-9 rounded-full object-cover"
+                  />
+                  <div
+                    class="w-9 h-9 rounded-full bg-[#5199D4] flex items-center justify-center text-[10px] text-white font-bold"
+                  >
+                    450+
+                  </div>
+                </div>
+                <p class="text-[14px] text-gray-700 italic font-medium">
+                  students enrolled
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a
+              href="index.html"
+              class="inline-block border border-[#F84007] text-[#F84007] px-8 py-3 md:px-10 md:py-4 rounded-full text-[18px] md:text-[25px] font-medium hover:bg-[#FF5722] hover:text-white transition-all duration-300"
+              data-aos="fade-up" data-aos-delay="300"
+            >
+              Enrol now
+            </a>
+          </div>
+
+          <div class="px-4 pt-[100px] lg:pt-[150px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0">
+            <!-- LEFT SIDE -->
+            <div class="col-span-1 lg:col-span-8">
+              <!-- IMAGE -->
+              <figure class="mb-12" data-aos="fade-up">
+                <img
+                  src="assets/images/coures-details-img-1.png"
+                  alt="course"
+                  class="w-full rounded-[10px]"
+                />
+              </figure>
+              <!-- ABOUT -->
+              <div class="bg-[#ffffff] rounded-3xl p-6 md:p-10" data-aos="fade-up">
+                <div class="mb-14">
+                  <h3 class="text-[25px] md:text-[35px] font-medium mb-[10px]">About Course</h3>
+                  <p class="text-[#8E8D87] text-[15px] md:text-[16px] leading-[28px] max-w-[650px]">
+                    Explore the fundamentals of user experience design,
+                    including user research, wireframing, and prototyping. Learn
+                    how to create intuitive, user-friendly int erfaces. Great
+                    for aspiring designers and product thinkers.
+                  </p>
+                </div>
+
+                <!-- WHAT YOU LEARN -->
+                <div class="mb-14" data-aos="fade-up">
+                  <h3 class="text-[24px] md:text-[34px] font-medium mb-[24px]">
+                    What Will You Learn?
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ul class="text-[#8E8D87]">
+                      <li class="text-[16px] md:text-[18px] font-medium mb-[24px]">
+                        • The foundations of UX design and its real-world
+                        applications
+                      </li>
+                      <li class="text-[16px] md:text-[18px] font-medium mb-[24px]">
+                        • The process of wireframing and prototyping
+                      </li>
+                      <li class="text-[16px] md:text-[18px] mb-[24px]">
+                        • Key tools used by UX professionals
+                      </li>
+                    </ul>
+
+                    <ul class="text-[#8E8D87]">
+                      <li class="text-[16px] md:text-[18px] font-medium mb-[24px]">
+                        • How to conduct user research and create personas
+                      </li>
+                      <li class="text-[16px] md:text-[18px] font-medium">
+                        • Basics of usability testing and improving user
+                        experiences.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- COURSE CONTENT -->
+
+                <div data-aos="fade-up">
+                  <h3 class="text-[25px] md:text-[35px] font-medium mb-10">Course Content</h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-6">
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Complete UI/UX Course Module
+                      </h6>
+                      <p
+                        class="text-[15px] md:text-[16px] text-normal max-w-[400px] text-[#8E8D87]"
+                      >
+                        Learn about the entire UI/UX workflow and develop skills
+                        for various dynamic design projects across industries.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Learning of UI/UX Tools
+                      </h6>
+                      <p class="text-[15px] md:text-[16px] text-normal text-[#8E8D87]">
+                        Master the skills to use the industry-standard UI/UX tools
+                        in key processes, including sketching, wireframing,
+                        prototyping, and usability testing
+                      </p>
+                    </div>
+
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Classes by Expert Mentors
+                      </h6>
+                      <p
+                        class="text-[15px] md:text-[16px] text-normal max-w-[424px] text-[#8E8D87]"
+                      >
+                        Interactive classes from experienced mentors to learn the
+                        basics and complex UI/UX design concepts that make you a
+                        competitive designer.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Doubt-Solving Sessions
+                      </h6>
+                      <p class="text-[15px] md:text-[16px] text-normal text-[#8E8D87]">
+                        Doubt-clearing sessions with mentors will give you a
+                        thorough understanding of UI/UX design concepts and help
+                        you get the most out of the course.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Live Projects
+                      </h6>
+                      <p class="text-[15px] md:text-[16px] text-normal text-[#8E8D87]">
+                        Learn by working on challenging real-time projects that
+                        make you capable of putting UI/UX theory and knowledge
+                        into practice.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h6 class="text-[18px] md:text-[20px] font-medium mb-[15px]">
+                        Usability Testing
+                      </h6>
+                      <p class="text-[15px] md:text-[16px] text-normal text-[#8E8D87]">
+                        Learn methods of testing interfaces for all types to
+                        create high-performing designs for websites and
+                        applications that offer better user experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="col-span-1 lg:col-span-4 lg:pl-10 mt-10 lg:mt-0">
+              <!-- Main Card Container -->
+              <div
+                class="bg-[#ffffff] mb-[20px] p-6 md:p-10 rounded-3xl w-full max-w-full lg:max-w-[450px] font-sans"
+                data-aos="fade-left" data-aos-delay="200"
+              >
+                <!-- Info List using UL -->
+                <ul class="list-none p-0 m-0">
+                  <!-- Eligibility Item -->
+                  <li class="mb-8">
+                    <div class="flex items-start m-0">
+                      <i
+                        class="fa-solid fa-graduation-cap text-[30px] mt-1 mr-4 text-black"
+                      ></i>
+                      <div>
+                        <h6
+                          class="text-[20px] font-medium text-black leading-tight"
+                        >
+                          Minimum Eligibility:
+                        </h6>
+                        <p class="text-[#8E8D87] font-medium text-[16px] mt-1">
+                          HS/Graduates/B.Tech/M.Tech/BCA/MCA
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Duration Item -->
+                  <li class="mb-8">
+                    <div class="flex items-start m-0">
+                      <i
+                        class="fa-regular fa-clock text-[30px] mt-1 mr-4 text-black"
+                      ></i>
+                      <div>
+                        <h6
+                          class="text-[20px] font-medium text-black leading-tight"
+                        >
+                          Course Duration:
+                        </h6>
+                        <p class="text-[#8E8D87] font-medium text-[16px] mt-1">
+                          4 Months
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Training Mode Item -->
+                  <li class="mb-10">
+                    <div class="flex items-start m-0">
+                      <i
+                        class="fa-solid fa-laptop text-[30px] mt-1 mr-4 text-black"
+                      ></i>
+                      <div>
+                        <h6
+                          class="text-[20px] font-medium text-black leading-tight"
+                        >
+                          Mode of Training:
+                        </h6>
+                        <p class="text-[#8E8D87] text-[16px] font-medium mt-1">
+                          Online/Offline
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <!-- Price Section -->
+                <div class="mb-[40px] md:mb-[55px]">
+                  <p class="text-[28px] md:text-[35px] font-bold text-black flex items-center">
+                    <span class="mr-2">₹</span> 67,500
+                  </p>
+                </div>
+
+                <!-- Start Learning Button -->
+                <button
+                  class="w-full bg-[#FF5722] text-white text-[20px] md:text-[24px] font-medium py-4 md:py-5 rounded-2xl shadow-lg hover:bg-[#000000] transition-all duration-300"
+                >
+                  Start Learning
+                </button>
+              </div>
+
+              <div
+                class="bg-[#ffffff] mb-[20px] rounded-3xl p-6 md:p-10 w-full max-w-full lg:max-w-[450px] font-sans"
+                data-aos="fade-left" data-aos-delay="300"
+              >
+                <!-- Instructor Section -->
+                <div>
+                  <p class="text-[28px] font-medium text-black mb-6">
+                    A course by
+                  </p>
+
+                  <figure class="flex items-center m-0">
+                    <!-- Instructor Image -->
+                    <div class="mr-4">
+                      <img
+                        src="assets/images/Ellipse 4.png"
+                        alt="Mark Thompson"
+                        class="w-20 h-20 rounded-full object-cover border-2 border-white shadow-sm"
+                      />
+                    </div>
+
+                    <!-- Instructor Name -->
+                    <div>
+                      <p class="text-[16px] font-medium text-black">
+                        Mark Thompson
+                      </p>
+                    </div>
+                  </figure>
+                </div>
+
+                <!-- Material Includes Title (Preview) -->
+              </div>
+              <div class="bg-white p-6 md:p-10 rounded-3xl w-full max-w-full lg:max-w-[450px] font-sans"
+                data-aos="fade-left" data-aos-delay="400"
+              >
+                <!-- Material Includes -->
+                <div class="mb-[40px]">
+                  <h3 class="text-[35px] font-bold text-black mb-6">
+                    Material Includes
+                  </h3>
+                  <ul class="list-none p-0 m-0 text-[#6B6B6B] text-[16px]">
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[19px] font-normal text-[#8E8D87]">
+                        Video lectures & case studies
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[19px] font-normal text-[#8E8D87]">
+                        Downloadable wireframe templates
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[19px] font-normal text-[#8E8D87]">
+                        Links to free UX tools & resources
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[74px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[19px] font-normal text-[#8E8D87]">
+                        Quizzes & practical assignments
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Requirements -->
+                <div class="mb-[40px]">
+                  <h3 class="text-[35px] font-bold text-black mb-6">
+                    Requirements
+                  </h3>
+                  <ul class="list-none p-0 m-0 text-[#6B6B6B] text-[16px]">
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[18px] font-normal text-[#8E8D87]">
+                        No prior UX knowledge required
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[70px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[18px] font-normal text-[#8E8D87]">
+                        Internet connection and a computer
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Audience -->
+                <div>
+                  <h3 class="text-[35px] font-bold text-black mb-[40px]">
+                    Audience
+                  </h3>
+                  <ul class="list-none p-0 m-0 text-[#6B6B6B] text-[16px]">
+                    <li class="flex items-start mb-4" mb-[40px]>
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[18px] font-normal text-[#8E8D87]">
+                        Beginners interested in UX or UI design
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[18px] font-normal text-[#8E8D87]">
+                        Product managers and developers wanting to learn UX
+                        basics
+                      </p>
+                    </li>
+                    <li class="flex items-start mb-[40px]">
+                      <span class="mr-3 text-lg">•</span>
+                      <p class="text-[18px] font-normal text-[#8E8D87]">
+                        Students exploring careers in tech or design
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer section start -->
+    <footer
+      class="bg-[#050517] text-white pt-24 pb-10"
+      style="font-family: &quot;Roboto&quot;, sans-serif"
+    >
+      <div class="max-w-[1350px] mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]"
+        >
+          <div
+            class="mb-10 lg:mb-0 lg:pr-10"
+            data-aos="fade-in"
+            data-aos-offset="0"
+          >
+            <a href="details.html" class="flex items-center mb-6">
+              <img src="assets/images/footer-logo.png" class="h-8" alt="logo" />
+            </a>
+
+            <p
+              class="text-[19px] max-w-[300px] text-white leading-relaxed mb-6"
+            >
+              Empowering learners worldwide through accessible, high-quality
+              online education designed to inspire growth, curiosity, and
+              lifelong success in every field of study.
+            </p>
+
+            <ul class="flex">
+              <li class="mr-6">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-[13px] tracking-widest font-bold hover:text-yellow-400"
+                  >INSTAGRAM</a
+                >
+              </li>
+              <li class="mr-6">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="text-[13px] tracking-widest font-bold hover:text-yellow-400"
+                  >FACEBOOK</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://in.linkedin.com/"
+                  target="_blank"
+                  class="text-[13px] tracking-widest font-bold hover:text-yellow-400"
+                  >LINKEDIN</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="mb-10 md:mb-0 lg:pl-4"
+            data-aos="fade-in"
+            data-aos-delay="100"
+            data-aos-offset="0"
+          >
+            <div class="text-[30px] font-normal tracking-widest mb-6 uppercase">
+              Links
+            </div>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Teachers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="mb-10 md:mb-0 lg:pl-4"
+            data-aos="fade-in"
+            data-aos-delay="200"
+            data-aos-offset="0"
+          >
+            <div class="text-[30px] font-normal tracking-widest mb-6 uppercase">
+              Products
+            </div>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Overviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Tutorials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[15px] font-normal text-gray-300 hover:text-white uppercase"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="lg:pl-6"
+            data-aos="fade-in"
+            data-aos-delay="300"
+            data-aos-offset="0"
+          >
+            <div
+              class="block text-[30px] font-normal tracking-widest mb-6 uppercase"
+            >
+              Contacts
+            </div>
+            <form action="">
+              <label class="block text-sm text-gray-300 mb-3 uppercase"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="w-full bg-transparent border-b border-gray-500 outline-none py-2 text-sm mb-3 focus:border-white transition-colors"
+              />
+            </form>
+            <p class="text-[15px] font-light text-gray-400 italic">
+              * Get all the latest offers & info
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-16 pt-6 text-center text-[21px] text-gray-400"
+          data-aos="fade-in"
+          data-aos-delay="100"
+          data-aos-offset="0"
+        >
+          &copy; 2026
+          <a href="details.html" class="underline hover:text-white"
+            >Qode Interactive</a
+          >, All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- footer section end -->
+
+    <!-- tailwind link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+
+        const runCounter = () => {
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const increment = target / 50;
+            const updateCount = () => {
+              if (count < target) {
+                count += increment;
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCount, 30);
+              } else {
+                counter.innerText = target;
+              }
+            };
+            updateCount();
+          });
+        };
+
+        const section = document.querySelector("#counter-section");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              runCounter();
+              observer.unobserve(section);
+            }
+          },
+          { threshold: 0.5 },
+        );
+
+        observer.observe(section);
+      });
+    </script>
+
+    <script>
+      const form = document.getElementById("signupForm");
+      const emailInput = document.getElementById("email");
+      const errorMsg = document.getElementById("emailError");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (email === "" || !emailPattern.test(email)) {
+          errorMsg.classList.remove("hidden");
+          emailInput.classList.add("ring-2", "ring-red-500");
+        } else {
+          errorMsg.classList.add("hidden");
+          emailInput.classList.remove("ring-2", "ring-red-500");
+
+          alert("Successfully Signed Up!");
+          form.reset();
+        }
+      });
+    </script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+
+      const openMenu = () => {
+        mobileMenuOverlay.classList.remove("hidden");
+        setTimeout(() => {
+          mobileMenuOverlay.classList.remove("opacity-0");
+        }, 10);
+        mobileMenu.classList.remove("-translate-x-full");
+      };
+
+      const closeMenu = () => {
+        mobileMenuOverlay.classList.add("opacity-0");
+        mobileMenu.classList.add("-translate-x-full");
+        setTimeout(() => {
+          mobileMenuOverlay.classList.add("hidden");
+        }, 300);
+      };
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", openMenu);
+        closeMenuBtn.addEventListener("click", closeMenu);
+        mobileMenuOverlay.addEventListener("click", closeMenu);
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.getElementById("page-transition-overlay");
+        if (overlay) {
+          requestAnimationFrame(() => {
+            overlay.classList.add("opacity-0");
+            setTimeout(() => {
+              overlay.classList.add("hidden");
+            }, 500);
+          });
+        }
+        const links = document.querySelectorAll("a[href]");
+        links.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const target = link.getAttribute("href");
+            // Check if it's an internal HTML link and not just '#'
+            if (
+              target &&
+              target.endsWith(".html") &&
+              target !== window.location.pathname.split("/").pop()
+            ) {
+              e.preventDefault();
+              if (overlay) {
+                overlay.classList.remove("hidden");
+                // trigger reflow
+                void overlay.offsetWidth;
+                overlay.classList.remove("opacity-0");
+              }
+              setTimeout(() => {
+                window.location.href = target;
+              }, 500);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
